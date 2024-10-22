@@ -324,11 +324,15 @@
   </div>
 </main>
 <div style="height: 2000px; background-color: yellow;"></div>
-@defer (on viewport) {
-    <app-data-display></app-data-display>
-} @placeholder {
-    <p>loading</p>
-}
+<div style="padding-top: 100px">
+    @defer (on viewport) {
+        <app-data-display></app-data-display>
+    } @placeholder {
+        <p>loading</p>
+    } @loading (after 100ms; minimum 1s) {
+        <p>loading</p>
+    }
+</div>
 
 
 

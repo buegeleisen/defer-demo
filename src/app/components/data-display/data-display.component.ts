@@ -16,10 +16,10 @@ export class DataDisplayComponent implements OnInit {
 
   constructor(private apiService: ApiService) { }
 
-  ngOnInit(): void {
-    this.apiService.getData().subscribe((data: Product[]) => {
+  async ngOnInit(): Promise<void> {
+    await this.delay(3000)
+    this.apiService.getData().subscribe( (data: Product[]) => {
       console.log('init');
-      this.delay(3000)
       this.data = data;
       console.log(data);
     });
