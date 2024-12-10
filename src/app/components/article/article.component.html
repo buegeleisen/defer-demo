@@ -1,0 +1,43 @@
+<div class="article">
+    <h3>{{ article.title }}</h3>
+    <!-- Image wrapped in a @defer block -->
+    @defer (on hover) {
+        <img style="max-width: 250px" [src]="article.imageUrl" alt="Article Image">
+    } @placeholder {
+        <!-- Placeholder content while loading -->
+        <div class="placeholder">
+            <p>Image placeholder...</p>
+        </div>
+    } @loading(minimum 3s) {
+        <!-- Loading indicator -->
+        <app-loading-spinner></app-loading-spinner>
+    } @error {
+        <!-- Error message -->
+        <div class="error">
+            <p>Failed to load image. Please try again later.</p>
+        </div>
+    }
+
+    <!-- Comments section wrapped in a @defer block -->
+    @defer (on interaction) {
+        <div class="comments">
+            <h4>Comments</h4>
+            <ul>
+                <li *ngFor="let comment of article.comments">{{ comment }}</li>
+            </ul>
+        </div>
+    } @placeholder {
+        <!-- Placeholder content while loading -->
+        <div class="placeholder">
+            <p>Comments placeholder...</p>
+        </div>
+    } @loading {
+        <!-- Loading indicator -->
+        <app-loading-spinner></app-loading-spinner>
+    } @error {
+        <!-- Error message -->
+        <div class="error">
+            <p>Failed to load comments. Please try again later.</p>
+        </div>
+    }
+</div>

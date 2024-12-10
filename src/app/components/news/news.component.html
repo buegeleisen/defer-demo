@@ -1,0 +1,9 @@
+<div class="background">
+    <h1>Siemens Times - Directly loaded component</h1>
+
+    <div class="card-container">
+        @for(article of articles; track article) {
+            <app-article [article]="article"></app-article>
+        }
+    </div>
+</div>
