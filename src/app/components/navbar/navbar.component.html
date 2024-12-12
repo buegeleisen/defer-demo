@@ -1,0 +1,8 @@
+<nav class="bg-gray-800 text-white p-4 flex justify-between fixed top-0 left-0 w-full">
+    <div class="font-bold text-lg">{{ title }}</div>
+    <ul class="flex space-x-4">
+        <li *ngFor="let link of navLinks">
+            <a [routerLink]="link.path" class="hover:text-gray-300">{{ link.label }}</a>
+        </li>
+    </ul>
+</nav>

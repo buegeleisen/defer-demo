@@ -5,13 +5,13 @@ import { LoadingSpinnerComponent } from "../loading-spinner/loading-spinner.comp
 
 
 @Component({
-  selector: 'app-article',
+  selector: 'app-article-hero',
   standalone: true,
   imports: [CommonModule, LoadingSpinnerComponent],
-  templateUrl: './article.component.html',
-  styleUrl: './article.component.css'
+  templateUrl: './article-hero.component.html',
+  styleUrl: './article-hero.component.css'
 })
-export class ArticleComponent implements OnInit{
+export class ArticleHeroComponent implements OnInit{
   @Input()
   article!: Article;
 

@@ -1,9 +1,36 @@
-<div class="background">
+<div class="pt-16">
     <h1>Siemens Times - Directly loaded component</h1>
 
-    <div class="card-container">
-        @for(article of articles; track article) {
-            <app-article [article]="article"></app-article>
+    <div>
+        @defer (on interaction) {
+            <div class="card-container">
+                @for(article of articles; track article) {
+                    <app-article [article]="article"></app-article>
+                }
+            </div>
+        } @placeholder {
+            <div class="placeholder">
+                <p>Click to see the news...</p>
+            </div>
+        } @loading (minimum 7s) {
+            <app-loading-spinner></app-loading-spinner>
+        }
+    </div>
+
+    <!--@defer (on timer(2000ms)) {
+        <app-article [article]="articles[2]"></app-article>
+    } @placeholder(minimum 2s) {
+        <div>Large component placeholder</div>
+    }-->
+
+
+    <div class="padding">
+        @defer (on viewport) {
+            <app-article-hero [article]="viewPortArticle"></app-article-hero>
+        } @placeholder {
+            <div>Large component placeholder</div>
+        } @loading (minimum 1s) {
+            <app-loading-spinner></app-loading-spinner>
         }
     </div>
 </div>

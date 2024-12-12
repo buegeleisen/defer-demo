@@ -54,10 +54,24 @@ export class NewsService {
     }
   ];
 
+  private viewPortArticle: Article = {
+    title: 'Viewport Article',
+    imageUrl: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2565&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    comments: [
+      'Cool',
+      'This happened on viewport',
+      'wow'
+    ]
+  };
+
   constructor() {}
 
   getArticles(): Article[] {
     // Simulate fetching articles from an API
     return this.articles;
+  }
+
+  getViewPortArticle() {
+    return this.viewPortArticle;
   }
 }

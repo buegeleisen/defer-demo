@@ -1,0 +1,14 @@
+<div class="pt-16">
+    <p>Defer with placeholder</p>
+    @defer(on hover) {
+        <app-heavy></app-heavy>
+    } @placeholder {
+        <div class="pt-16">
+            <div class="h-50vh w-50vh flex justify-center items-center">
+                <img class="w-1/3" src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" alt="">
+            </div>
+        </div>
+    } @loading(minimum 1s) {
+        <p class="text-4xl text-center">Loading ...</p>
+    }
+</div>
